@@ -11,6 +11,9 @@ import info_template from '../templates/info_template.hbs';
 let search = '';
 const baseUrl = `https://restcountries.eu/rest/v2/name/`;
 
+const forDebounce = require('debounce');
+const onFetchCountries = forDebounce(fetchCountries, 500);
+
 function fetchCountries(searchQuery)  {
   search = refs.searchQuery.value;
 
@@ -20,9 +23,9 @@ function fetchCountries(searchQuery)  {
     fetch(url)
       .then(res => res.json())
       .then(data => {
-        //console.log(data);
+        
         if (data.length > 10) {
-          //console.log('error');
+          console.log('error');
           PNotify.error({
             text: `Too many matches found. Please enter a more specific query!`,
           });
@@ -42,5 +45,3 @@ function fetchCountries(searchQuery)  {
 }
 
 refs.searchQuery.addEventListener('input', fetchCountries);
-const forDebounce = require('debounce');
-const onFetchCountries = debounce(fetchCountries, 500);
