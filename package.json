@@ -26,6 +26,7 @@
     "@babel/preset-env": "^7.11.5",
     "@pnotify/animate": "^5.2.0",
     "@pnotify/core": "^5.2.0",
+    "@pnotify/mobile": "^5.2.0",
     "autoprefixer": "^9.8.6",
     "babel-loader": "^8.1.0",
     "clean-webpack-plugin": "^3.0.0",
@@ -54,6 +55,7 @@
   "dependencies": {
     "axios": "^0.21.1",
     "core-js": "^3.6.5",
+    "debounce": "^1.2.0",
     "handlebars": "^4.7.6",
     "lodash.debounce": "^4.0.8"
   }

@@ -1,9 +1,9 @@
 import refs from './refs';
-import { debounce } from 'lodash.debounce';
+// import { debounce } from 'lodash.debounce';
+import { debounce } from "debounce";
 import './pnotify';
-import animatePnotify from '@pnotify/animate/dist/PNotifyAnimate.js'
-import PNotify from '@pnotify/core/dist/PNotify'
-// import cssPnotify from '@pnotify/core/dist/PNotify.css'
+// import animatePnotify from '@pnotify/animate/dist/PNotifyAnimate.js'
+import PNotify from '@pnotify/core/dist/PNotify.js'
 
 // import 'animate.css/animate.min.css';
 import list_template from '../templates/list_template.hbs';
@@ -11,7 +11,7 @@ import info_template from '../templates/info_template.hbs';
 let search = '';
 const baseUrl = `https://restcountries.eu/rest/v2/name/`;
 
-function fetchCountries(searchQuery) {
+function fetchCountries(searchQuery)  {
   search = refs.searchQuery.value;
 
   if (search) {
@@ -40,4 +40,7 @@ function fetchCountries(searchQuery) {
       });
   }
 }
-refs.searchQuery.addEventListener('input', debounce(fetchCountries, 500));
+
+refs.searchQuery.addEventListener('input', fetchCountries);
+const forDebounce = require('debounce');
+const onFetchCountries = debounce(fetchCountries, 500);
