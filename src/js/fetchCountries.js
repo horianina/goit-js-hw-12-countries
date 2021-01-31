@@ -2,8 +2,14 @@ import refs from './refs';
 // import { debounce } from 'lodash.debounce';
 import { debounce } from "debounce";
 import './pnotify';
-// import animatePnotify from '@pnotify/animate/dist/PNotifyAnimate.js'
-import PNotify from '@pnotify/core/dist/PNotify.js'
+import '@pnotify/core/dist/BrightTheme.css';
+import { defaults } from '@pnotify/core';
+// import  PNotify from 'node_modules/@pnotify/core/dist/PNotify.js';
+  // import * as PNotifyMobile from 'node_modules/@pnotify/mobile/dist/PNotifyMobile.js';
+  // import PNotify from '@pnotify/dist/PNotify.js';
+import animatePnotify from '@pnotify/animate/dist/PNotifyAnimate.js'
+import PNotify from 'pnotify/package.json'
+ import '@pnotify/core/dist/Material.css';
 
 // import 'animate.css/animate.min.css';
 import list_template from '../templates/list_template.hbs';
@@ -14,7 +20,7 @@ const baseUrl = `https://restcountries.eu/rest/v2/name/`;
 const forDebounce = require('debounce');
 const onFetchCountries = forDebounce(fetchCountries, 500);
 
-function fetchCountries(searchQuery)  {
+function  fetchCountries  (searchQuery)  {
   search = refs.searchQuery.value;
 
   if (search) {
@@ -25,7 +31,7 @@ function fetchCountries(searchQuery)  {
       .then(data => {
         
         if (data.length > 10) {
-          console.log('error');
+          // console.log('error');
           PNotify.error({
             text: `Too many matches found. Please enter a more specific query!`,
           });

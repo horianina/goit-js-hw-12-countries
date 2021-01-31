@@ -57,6 +57,7 @@
     "core-js": "^3.6.5",
     "debounce": "^1.2.0",
     "handlebars": "^4.7.6",
-    "lodash.debounce": "^4.0.8"
+    "lodash.debounce": "^4.0.8",
+    "material-design-icon-fonts": "^3.0.1"
   }
 }
