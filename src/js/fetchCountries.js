@@ -3,15 +3,8 @@ import refs from './refs';
 import { debounce } from "debounce";
 import './pnotify';
 import '@pnotify/core/dist/BrightTheme.css';
-// import { defaults } from '@pnotify/core';
-// import  PNotify from 'node_modules/@pnotify/core/dist/PNotify.js';
-  // import * as PNotifyMobile from 'node_modules/@pnotify/mobile/dist/PNotifyMobile.js';
-  // import PNotify from '@pnotify/dist/PNotify.js';
-// import animatePnotify from '@pnotify/animate/dist/PNotifyAnimate.js'
-// import PNotify from 'pnotify/package.json'
-//  import '@pnotify/core/dist/Material.css';
- import {error, success} from '@pnotify/core'
- import '@pnotify/core/dist/PNotify.css';
+import {error, success} from '@pnotify/core'
+import '@pnotify/core/dist/PNotify.css';
 
 // error({title: 'asdasd', delay: 2000}, 200)
 import list_template from '../templates/list_template.hbs';
